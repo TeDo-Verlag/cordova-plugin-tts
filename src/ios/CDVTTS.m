@@ -23,7 +23,8 @@
     if (lastCallbackId) {
         [self.commandDelegate sendPluginResult:result callbackId:lastCallbackId];
         lastCallbackId = nil;
-    } else {
+    }
+    if (callbackId) {
         [self.commandDelegate sendPluginResult:result callbackId:callbackId];
         callbackId = nil;
     }
